@@ -4,6 +4,8 @@ The frontend for **Indie Animation Hub**, a web platform for discovering and exp
 
 The application provides a searchable catalogue of animations with advanced filtering, responsive design, and detailed animation pages that connects to an Express server backend. 
 
+Demo Link: https://indie-animation-frontend-production.vercel.app/
+
 ---
 
 ## Features
