@@ -51,7 +51,7 @@ Each animation includes:
 ## Installation
 
 ```
-Clone the repository:git clone https://github.com/yourusername/indie-animation-frontend.git
+Clone the repository:git clone https://github.com/gsortan/indie-animation-frontend.git
 
 Install dependencies:npm install
 
