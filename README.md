@@ -55,6 +55,9 @@ Clone the repository:git clone https://github.com/gsortan/indie-animation-fronte
 
 Install dependencies:npm install
 
+Create a .env file in the root directory and add the following variables:
+VITE_API_URL = <backend URL here>
+
 Run development server: npm run dev
 ```
 ## Build
