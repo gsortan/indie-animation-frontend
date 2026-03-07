@@ -62,3 +62,11 @@ Run development server: npm run dev
 ```
 npm run build
  ```
+
+## Screenshots
+<img width="954" height="531" alt="IndieHub1" src="https://github.com/user-attachments/assets/70bb8915-b36f-4f66-87da-0fb796d8b3da" />
+<img width="956" height="531" alt="IndieHub2" src="https://github.com/user-attachments/assets/4101d67f-4fdd-4807-bb20-1f85c454b94c" />
+<img width="958" height="532" alt="indieHub3" src="https://github.com/user-attachments/assets/95db0c76-20e3-40d1-8981-e3536d7c9ae6" />
+
+
+
