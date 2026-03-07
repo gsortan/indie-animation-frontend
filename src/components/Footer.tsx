@@ -12,7 +12,7 @@ export default function Footer() {
         </p>
 
         <p className="mt-6 text-xs text-white/40">
-          © {new Date().getFullYear()} IndieVault
+          © {new Date().getFullYear()} IndieHub
         </p>
 
       </div>
