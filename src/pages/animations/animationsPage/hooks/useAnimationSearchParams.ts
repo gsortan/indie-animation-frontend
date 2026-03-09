@@ -26,6 +26,9 @@ export function useAnimationSearchParams() {
   const yearMax = searchParams.get("yearMax") ?? "";
   const sort = searchParams.get("sort") ?? "popularity";
 
+  const rawView = searchParams.get("view");
+  const view: "grid" | "table" = rawView === "table" ? "table" : "grid";
+
   const creatorsParam = searchParams.get("creators") ?? "";
   const creators = useMemo(
     () =>
@@ -97,6 +100,12 @@ export function useAnimationSearchParams() {
     setSearchParams(params);
   }
 
+  function handleViewChange(nextView: "grid" | "table") {
+    const params = new URLSearchParams(searchParams.toString());
+    params.set("view", nextView);
+    setSearchParams(params);
+  }
+
   function clearFilters() {
     const params = new URLSearchParams(searchParams.toString());
 
@@ -135,11 +144,10 @@ export function useAnimationSearchParams() {
   }
 
   return {
-
     PAGE_SIZE,
     page,
     skip,
-  
+
     searchParams,
     search,
     synopsis,
@@ -152,12 +160,14 @@ export function useAnimationSearchParams() {
     yearMin,
     yearMax,
     sort,
+    view,
     appliedTagIds,
 
     draftTagIds,
     toggleDraftTag,
     handleSortChange,
     handleSearchSubmit,
+    handleViewChange,
     clearFilters,
   };
 }

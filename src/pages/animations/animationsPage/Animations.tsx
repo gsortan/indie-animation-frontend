@@ -8,6 +8,9 @@ import { useTags } from "./hooks/useTags";
 
 import AnimationsToolbar from "./components/AnimationsToolBar";
 import AnimationsGrid from "./components/AnimationsGrid";
+import TableView from "./components/TableView";
+import { AnimationsGridSkeleton } from "./components/AnimationGridSkeleton";
+import { TableViewSkeleton } from "./components/TableViewSkeleton";
 
 export default function AnimationsPage() {
   const API_URL = import.meta.env.VITE_API_URL;
@@ -85,18 +88,17 @@ export default function AnimationsPage() {
             onSearch={sp.handleSearchSubmit}
             onSort={sp.handleSortChange}
             onOpenMobileFilters={() => setShowMobileFilters(true)}
+            view={sp.view}
+            changeTableView={() => sp.handleViewChange("table")}
+            changeGridView={() => sp.handleViewChange("grid")}
           />
 
           {isLoading && !hasFetched ? (
-            <div className="max-w-7xl grid gap-4 grid-cols-1 xs:grid-cols-1 sm2:grid-cols-2 md2:grid-cols-3 lg2:grid-cols-4 mr-8">
-              {Array.from({ length: 12 }).map((_, i) => (
-                <div key={i} className="flex items-center flex-col">
-                  <div className="w-full max-w-[30rem] md2:w-[20rem] lg2:w-[12rem] aspect-[2/3] rounded-xl bg-zinc-800 animate-pulse" />
-                  <div className="h-4 w-32 mt-3 rounded bg-zinc-800/70 animate-pulse" />
-                  <div className="h-4 w-24 mt-2 rounded bg-zinc-800/70 animate-pulse" />
-                </div>
-              ))}
-            </div>
+            sp.view === "table" ? (
+              <TableViewSkeleton />
+            ) : (
+              <AnimationsGridSkeleton />
+            )
           ) : showNoResults ? (
             <div className="flex flex-col items-center justify-center py-20 text-center">
               <h2 className="text-2xl font-semibold text-white mb-2">
@@ -105,7 +107,12 @@ export default function AnimationsPage() {
             </div>
           ) : (
             <>
-              <AnimationsGrid anims={anims} />
+              {sp.view === "table" ? (
+                <TableView anims={anims} />
+              ) : (
+                <AnimationsGrid anims={anims} />
+              )}
+
               <div className="mb-4">
                 <PaginationRounded
                   totalCount={count}
