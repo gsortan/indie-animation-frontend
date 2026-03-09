@@ -4,7 +4,7 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto px-6 py-8 text-center">
 
         <h2 className="text-xl font-bold text-blue-400">
-          IndieVault
+          IndieHub
         </h2>
 
         <p className="mt-2 text-sm text-white/60">
