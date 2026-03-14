@@ -34,7 +34,7 @@ export default function CreatorFilterSection({creatorName,setCreatorName,creator
                 onClick={() =>
                   setCreatorList((prev) => prev.filter((_, i) => i !== index))
                 }
-                className="px-3 py-1 whitespace-nowrap text-sm text-white bg-gray-500 hover:bg-gray-400 rounded-full"
+                className=" cursor-pointer px-3 py-1 whitespace-nowrap text-sm text-white bg-gray-500 hover:bg-gray-400 rounded-full"
               >
                 {name} <span className="ml-1 font-bold leading-none">×</span>
               </button>
